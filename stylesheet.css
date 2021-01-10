@@ -1,0 +1,116 @@
+body {
+    margin: 10px;
+    background-color: #dad7cd;
+    font-family: 'Montserrat', sans-serif;
+}
+section {
+    margin: 0;
+}
+.topic {
+    padding: 50px 20px 50px 20px;
+    font-size: 1.5rem;
+    min-height: 350px;
+}
+#left {
+    background: #344e41 center/cover no-repeat url(images/leBalconPhoto.jpg) ;
+    width:50%;
+    height:750px;
+    float:left
+}
+#right {
+    background:  #344e41;
+    margin-left:50%;
+    height:350px;
+    padding: 200px 50px;
+    text-align: center;
+}
+#bike {
+    font-size: 3em;
+    font-stretch: extra-expanded;
+    transform: rotate(-25deg);
+    transition: 3s;
+    color: #dad7cd;
+}
+.clear {
+    clear:both;
+}
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-stretch: ultra-expanded;
+    text-align: center;
+    font-weight: 300;
+    color:white;
+}
+h2 {
+    font: small-caps bold 2em 'Montserrat', sans-serif;
+    font-stretch: extra-expanded;
+    text-align: center;
+}
+h5 {
+    font: small-caps bold 1.5em 'Montserrat', sans-serif;
+}
+a {
+    text-decoration: none;
+    color:#dad7cd;
+}
+a:hover {
+    color: pink;
+    transition: margin 2px 1s;
+}
+#vtt {
+    border: solid black;
+    padding: 5px 15px;
+}
+#how {
+    background: #588157;
+    height: 350px;
+    padding: 50px 20px 50px 20px;
+}
+#about {
+    background:#dad7cd;
+}
+#guide {
+    background: #588157;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+}
+.card-white {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    padding: 18px;
+    border-radius: 4px;
+    margin: 1px;
+    width: 300px;
+    text-align: center;
+}
+.card-white img{
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+.box {
+    padding: 0 50px 0 50px;
+}
+.topnav {
+    background-color: gray;
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    color: #F2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px; 
+}
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  .topnav a.active {
+    background-color: #F2B6FB;
+    color: white;
+}
