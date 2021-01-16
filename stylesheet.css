@@ -1,5 +1,5 @@
 body {
-    margin: 10px;
+    margin: 0px;
     background-color: #dad7cd;
     font-family: 'Montserrat', sans-serif;
 }
@@ -14,7 +14,7 @@ section {
 #left {
     background: #344e41 center/cover no-repeat url(images/leBalconPhoto.jpg) ;
     width:50%;
-    height:750px;
+    min-height:750px;
     float:left
 }
 #right {
@@ -54,7 +54,7 @@ a {
     color:#dad7cd;
 }
 a:hover {
-    color: pink;
+    color: rgb(253, 61, 93);
     transition: margin 2px 1s;
 }
 #vtt {
@@ -63,24 +63,28 @@ a:hover {
 }
 #how {
     background: #588157;
-    height: 350px;
     padding: 50px 20px 50px 20px;
 }
 #about {
     background:#dad7cd;
+    padding: 0 10% 5% 10%;
 }
+#about h3 {
+    font-size: 1.25em;
+}
+
 #guide {
     background: #588157;
 }
 .card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .card-white {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-    padding: 18px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 10px;
     margin: 1px;
     width: 300px;
     text-align: center;
@@ -88,12 +92,9 @@ a:hover {
 .card-white img{
     width: 180px;
     height: 180px;
-    border-radius: 4px;
     object-fit: contain;
 }
-.box {
-    padding: 0 50px 0 50px;
-}
+
 .topnav {
     background-color: gray;
     overflow: hidden;
@@ -113,4 +114,23 @@ a:hover {
   .topnav a.active {
     background-color: #F2B6FB;
     color: white;
+}
+footer {
+    background-color: rgb(92, 91, 91);
+    padding: 10px;
+    border-bottom: 10px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+@media (max-width: 596px){
+    #bike {
+        font-size: 1.5em;
+    }
+    h2 {
+     font-size: 1.5em;
+    }
+    h3 {
+        font-size:1em;
+    }
+    
 }
