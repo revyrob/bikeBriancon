@@ -4,72 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+
     <title>Bike Serre Chevalier</title>
 </head>
 
 <body>
-    <div class='topnav' id='myTopnav'>
-
-        <a href="/"><span class="glyphicon glyphicon-home"></span>Accueil</a>
-
-        <a href="/map2"><span class="glyphicon glyphicon-globe"></span> Carte VTT</a>
-
-        <a href="#about"><span class="glyphicon glyphicon-info-sign"></span> à Propos</a>
-
-        <a href="#guide"><span class="glyphicon glyphicon-sunglasses"></span> Guides Local</a>
-
-    </div>
-
-    <div>
-        <div id='left'>
+    <nav id='mainNavbar' class='navbar navbar-dark navbar-expand-md py-0 fixed-top'>
+        <a href="/" class="navbar-brand">Accueil</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class='navbar-nav'>
+                <li class="nav-item">
+                    <a href="/map2" class="nav-link">Carte VTT</a>
+                </li>
+            </ul>
+            <ul class='navbar-nav'>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">à Propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#guide" class="nav-link">Guides Local</a>
+                </li>
+            </ul>
         </div>
-        <div class='banner' id='right'>
-            <div id='bike'>
-                <h1>Bike</h1>
+    </nav>
+
+    <section class="container-fluid px-0">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="images/leBalconPhoto.jpg" alt="" class="img-fluid">
             </div>
-            <h2>Serre Chevalier</h2>
-            <h3>Plate-forme communautaire pour les pistes VTT.</h3>
-            <button id=vtt>Carte VTT</button>
+            <div class="topic col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-8-lg" id="bike">
+                        <h1>Bike</h1>
+                        <h2>Serre Chevalier</h2>
+                        <h3>Plate-forme communautaire pour les pistes VTT.</h3>
+                        <a type="button" class="btn btn-outline-light btn-lg" href="/map2">
+                            Carte VTT
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class='clear'></div>
-    </div>
-    </div>
-
-
-    <div class='topic box' id='how'>
-        <div class='title'>
-            <h2>Aidez-nous à grandir</h2>
         </div>
-        <p>Nous cherchons toujours à grandir et à ajouter de nouvelles données pour que les gens puissent en
-            profiter.
-            Les données seront d'abord partagées avec les habitants pour s'assurer que les données sont claires,
-            propres
-            et notées de manière appropriée.</p>
-        <h4>Pour partager vos données, veuillez envoyer à kayle.robson@gmail.com</h4>
-    </div>
+    </section>
 
+    <section class='topic' id='how'>
+        <div class='row justify-content-center'>
+            <div class='col-10'>
+                <div class='title'>
+                    <h2>Aidez-nous à grandir</h2>
+                </div>
+                <p>Nous cherchons toujours à grandir et à ajouter de nouvelles données pour que les gens puissent en
+                    profiter.
+                    Les données seront d'abord partagées avec les habitants pour s'assurer que les données sont claires,
+                    propres
+                    et notées de manière appropriée.</p>
+                <h4>Pour partager vos données, veuillez envoyer <a href="kayle.robson@gmail.com">ici</a>. </h4>
+            </div>
+        </div>
+    </section>
 
-    <div class='topic' id='about'>
+    <section class='topic' id='about'>
         <div class='title'>
             <h2>À Propos</h2>
         </div>
-        <h3>Je m'appelle Kayle Robson</h3>
-        <p>J'adore le vélo avant tout et je vis actuellement dans la belle ville de Briançon dans les Hautes-Alpes
+        <h3>Je m'appelle Kayle Robson, </h3>
+        <p>la créatrice de cette site. J'adore le vélo avant tout et je vis actuellement dans la belle ville de Briançon
+            dans les Hautes-Alpes
             de
-            France. J'aime bâtir de nouveaux projets et contribuer à ma communauté de nombreuses façons. Comme je
-            suis
-            aussi étudiante en développement du web, ce projet de VTT Serre Chevalier est parfait pour moi. Je suis
-            canadienne vivant en France avec ma famille. J'ai toujours le sourire aux lévres et vous me trouverez
-            quelque part entourée d'arbres et de montagnes. </p>
+            France. Quand j'ai arrivé, j'ai trouvé l'info pour le VTT en Serre Che n'etait pas facile à trouver, j'ai
+            fait ce projet de Bike Serre Chevalier pour partager les
+            information et idealment partage beaucoup les belles chemins en Serre Che. J'aime
+            bâtir de nouveaux projets et contribuer à ma communauté de nombreuses façons. Si vous voulais voir mes
+            autres projets, regarde mon <a href="https://revyrob.github.io/kaylerobson/">site internet</a>.</p>
         <p>J'espère que vous apprécierez les cartes et je suis toujours désireux de nouvelles données GPS et
             d'entrées
-            pour améliorer le site</p>
-    </div>
+            pour améliorer le site.</p>
+    </section>
 
-    <div class='topic' id='guide'>
+    <section class='topic' id='guide'>
         <div class='title'>
             <h2>Guides Local</h2>
         </div>
@@ -90,22 +113,33 @@
                 <p>Bike Park, VTT, Cours pour les enfants, Vélo Electric, Enduro, Vélo de Route</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <footer>
-        <span><a href="/map2">
-                Map
-            </a></span>
-        <span><a href="#about">
-                À Propos
-            </a></span>
-        <span><a href="#guide">
-                Guides Local
-            </a></span>
-        <span><a href="#how">
-                Grandir
-            </a></span>
+        <a href="/"></span>Accueil</a>
+        <a href="/map2"></span> Carte VTT</a>
+        <a href="#about"></span> à Propos</a>
+        <a href="#guide"></span> Guides Local</a>
     </footer>
+
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
 </body>
 
 </html>

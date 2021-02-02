@@ -1,45 +1,17 @@
 body {
     margin: 0px;
-    background-color: #dad7cd;
+    background-color:#344e41;
     font-family: 'Montserrat', sans-serif;
 }
-section {
-    margin: 0;
-}
 .topic {
-    padding: 50px 20px 50px 20px;
+    padding: 50px 20px;
     font-size: 1.5rem;
     min-height: 350px;
 }
-#left {
-    background: #344e41 center/cover no-repeat url(images/leBalconPhoto.jpg) ;
-    width:50%;
-    min-height:750px;
-    float:left
-}
-#right {
-    background:  #344e41;
-    margin-left:50%;
-    height:350px;
-    padding: 200px 50px;
-    text-align: center;
-}
-#bike {
-    font-size: 3em;
-    font-stretch: extra-expanded;
-    transform: rotate(-25deg);
-    transition: 3s;
-    color: #dad7cd;
-}
-.clear {
-    clear:both;
-}
 h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-stretch: ultra-expanded;
     text-align: center;
-    font-weight: 300;
     color:white;
+    font: ultra-expanded 300 4em Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 h2 {
     font: small-caps bold 2em 'Montserrat', sans-serif;
@@ -53,26 +25,27 @@ a {
     text-decoration: none;
     color:#dad7cd;
 }
-a:hover {
-    color: rgb(253, 61, 93);
-    transition: margin 2px 1s;
+.topic a {
+    font-weight: 600;
+    color:black;
 }
-#vtt {
-    border: solid black;
-    padding: 5px 15px;
+#guide a:hover {
+    color: rgb(253, 61, 93);
+    transition: 1s;
+    text-decoration: none;
 }
 #how {
     background: #588157;
-    padding: 50px 20px 50px 20px;
+    padding: 50px 20px;
 }
 #about {
     background:#dad7cd;
-    padding: 0 10% 5% 10%;
+    padding: 50px 20px;
 }
 #about h3 {
-    font-size: 1.25em;
+    text-align: center;
+    font: 1.25em;
 }
-
 #guide {
     background: #588157;
 }
@@ -94,43 +67,31 @@ a:hover {
     height: 180px;
     object-fit: contain;
 }
-
-.topnav {
-    background-color: gray;
-    overflow: hidden;
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight:100;
+    background-color:#344e41;
 }
-.topnav a {
-    float: left;
-    color: #F2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px; 
+#mainNavbar .nav-link {
+    color: whitesmoke;
 }
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+#mainNavbar .nav-link:hover {
+    color:grey;
 }
-  .topnav a.active {
-    background-color: #F2B6FB;
-    color: white;
+#mainNavbar .navbar-brand {
+    color: rgb(37, 37, 37);
+    font-size: 1.5rem;
 }
 footer {
     background-color: rgb(92, 91, 91);
     padding: 10px;
     border-bottom: 10px solid black;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    text-decoration: none;
 }
-@media (max-width: 596px){
-    #bike {
-        font-size: 1.5em;
-    }
-    h2 {
-     font-size: 1.5em;
-    }
-    h3 {
-        font-size:1em;
-    }
-    
+footer a:hover{
+    text-decoration: none;
+    color:  black;
 }
