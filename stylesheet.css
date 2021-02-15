@@ -79,8 +79,9 @@ a {
     color:grey;
 }
 #mainNavbar .navbar-brand {
-    color: rgb(37, 37, 37);
+    color: #84ac83;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 footer {
     background-color: rgb(92, 91, 91);
@@ -94,4 +95,9 @@ footer {
 footer a:hover{
     text-decoration: none;
     color:  black;
+}
+#map {
+    display: flex;
+    justify-content:space-around;
+    max-height: 750px;
 }
