@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    padding: 0px;
     background-color:#344e41;
     font-family: 'Montserrat', sans-serif;
 }
@@ -35,7 +36,7 @@ a {
     text-decoration: none;
 }
 #how {
-    background: #588157;
+    background: #dad7cd;
     padding: 50px 20px;
 }
 #about {
@@ -58,7 +59,7 @@ a {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 10px;
-    margin: 1px;
+    margin: 5px;
     width: 300px;
     text-align: center;
 }
