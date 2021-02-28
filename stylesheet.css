@@ -102,11 +102,6 @@ footer a:hover{
     text-decoration: none;
     color:  black;
 }
-#map {
-    display: flex;
-    justify-content:space-around;
-    max-height: 750px;
-}
 #bike {
     color:whitesmoke;
 }
