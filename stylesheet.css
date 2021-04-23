@@ -34,20 +34,12 @@ a {
     transition: 1s;
     text-decoration: none;
 }
-#how {
+#how, #guide {
     background: #588157;
     padding: 50px 20px;
 }
-#about {
-    background:#dad7cd;
-    padding: 50px 20px;
-}
-#about h3 {
-    text-align: center;
-    font: 1.25em;
-}
-#guide {
-    background: #588157;
+#attention h3 {
+    font: 1.65em;
 }
 .card-container {
     display: flex;
@@ -105,3 +97,27 @@ footer a:hover{
 #bike {
     color:whitesmoke;
 }
+#chienVTT {
+    height: 400px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#attention {
+    color: whitesmoke;
+}
+#attention a:hover {
+    color: rgb(253, 61, 93);
+    transition: 1s;
+    text-decoration: none;
+}
+#attention a {
+    color: whitesmoke;
+}
+@media (max-width: 425px) {
+    #chienVTT {
+        height: 225px;;
+    }
+}
+
