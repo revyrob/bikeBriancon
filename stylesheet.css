@@ -115,7 +115,7 @@ footer a:hover{
 #attention a {
     color: whitesmoke;
 }
-@media (max-width: 567px) {
+@media only screen and (max-width: 567px) {
     #chienVTT {
         height: 225px;;
     }
