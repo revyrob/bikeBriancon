@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/L.Control.Locate.min.css">
     <link rel="stylesheet" href="css/qgis2web.css">
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/leaflet-search.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -38,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class='navbar-nav'>
                 <li class="nav-item">
-                    <a href="map2.html" class="nav-link">Carte VTT</a>
+                    <a href="map.html" class="nav-link">Carte VTT</a>
                 </li>
             </ul>
             <ul class='navbar-nav'>
@@ -60,13 +61,14 @@
     <script src="js/rbush.min.js"></script>
     <script src="js/labelgun.min.js"></script>
     <script src="js/labels.js"></script>
+    <script src="js/leaflet-search.js"></script>
     <script src="data/BoisdAvalRoute2_2.js"></script>
     <script src="data/BoisdAval_3.js"></script>
     <script src="data/BoisdeSaintJoseph_4.js"></script>
     <script src="data/BoisdeStJosephinfrieur_5.js"></script>
     <script src="data/BoisduCassetMonetier_6.js"></script>
     <script src="data/Canaldelglise_7.js"></script>
-    <script src="data/ChemindeRoyRoute2_8.js"></script>
+    <script src="data/ChemindeRoy_8.js"></script>
     <script src="data/CheminduRoy_9.js"></script>
     <script src="data/ClotdelaSelette_10.js"></script>
     <script src="data/ColduGranon_11.js"></script>
@@ -98,8 +100,14 @@
     <script src="data/51_lacets_37.js"></script>
     <script src="data/PuyChirouzan_38.js"></script>
     <script src="data/ChantermerlesauBriancon_39.js"></script>
-    <script src="data/BrianconauLaSalle_40.js"></script>
-    <script src="data/Infernet_41.js"></script>
+    <script src="data/Chemin_Eti_40.js"></script>
+    <script src="data/BrianconauLaSalle_41.js"></script>
+    <script src="data/Infernet_42.js"></script>
+    <script src="data/LeMelezin2_43.js"></script>
+    <script src="data/Melezene_44.js"></script>
+    <script src="data/Ratire_45.js"></script>
+    <script src="data/RectifierRed_46.js"></script>
+    <script src="data/RectifierBlack_47.js"></script>
     <script>
         // var highlightLayer;
         // function highlightFeature(e) {
@@ -594,7 +602,7 @@
         });
         bounds_group.addLayer(layer_Canaldelglise_7);
         map.addLayer(layer_Canaldelglise_7);
-        function pop_ChemindeRoyRoute2_8(feature, layer) {
+        function pop_ChemindeRoy_8(feature, layer) {
             layer.on({
                 mouseout: function (e) {
                     for (i in e.target._eventParents) {
@@ -630,11 +638,11 @@
             layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
-        function style_ChemindeRoyRoute2_8_0() {
+        function style_ChemindeRoy_8_0() {
             return {
-                pane: 'pane_ChemindeRoyRoute2_8',
+                pane: 'pane_ChemindeRoy_8',
                 opacity: 1,
-                color: 'rgba(227,26,28,1.0)',
+                color: 'rgba(10,3,4,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -643,20 +651,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_ChemindeRoyRoute2_8');
-        map.getPane('pane_ChemindeRoyRoute2_8').style.zIndex = 408;
-        map.getPane('pane_ChemindeRoyRoute2_8').style['mix-blend-mode'] = 'normal';
-        var layer_ChemindeRoyRoute2_8 = new L.geoJson(json_ChemindeRoyRoute2_8, {
+        map.createPane('pane_ChemindeRoy_8');
+        map.getPane('pane_ChemindeRoy_8').style.zIndex = 408;
+        map.getPane('pane_ChemindeRoy_8').style['mix-blend-mode'] = 'normal';
+        var layer_ChemindeRoy_8 = new L.geoJson(json_ChemindeRoy_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ChemindeRoyRoute2_8',
-            layerName: 'layer_ChemindeRoyRoute2_8',
-            pane: 'pane_ChemindeRoyRoute2_8',
-            onEachFeature: pop_ChemindeRoyRoute2_8,
-            style: style_ChemindeRoyRoute2_8_0,
+            dataVar: 'json_ChemindeRoy_8',
+            layerName: 'layer_ChemindeRoy_8',
+            pane: 'pane_ChemindeRoy_8',
+            onEachFeature: pop_ChemindeRoy_8,
+            style: style_ChemindeRoy_8_0,
         });
-        bounds_group.addLayer(layer_ChemindeRoyRoute2_8);
-        map.addLayer(layer_ChemindeRoyRoute2_8);
+        bounds_group.addLayer(layer_ChemindeRoy_8);
+        map.addLayer(layer_ChemindeRoy_8);
         function pop_CheminduRoy_9(feature, layer) {
             layer.on({
                 mouseout: function (e) {
@@ -949,7 +957,7 @@
             return {
                 pane: 'pane_CroixdeToulouse_13',
                 opacity: 1,
-                color: 'rgba(5,15,164,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -1894,7 +1902,7 @@
             return {
                 pane: 'pane_LesCombes_28',
                 opacity: 1,
-                color: 'rgba(5,15,164,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -2272,7 +2280,7 @@
             return {
                 pane: 'pane_TorrentdeSachasRoute2_34',
                 opacity: 1,
-                color: 'rgba(5,15,164,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -2335,7 +2343,7 @@
             return {
                 pane: 'pane_TorrentdeSachas_35',
                 opacity: 1,
-                color: 'rgba(5,15,164,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -2461,7 +2469,7 @@
             return {
                 pane: 'pane_51_lacets_37',
                 opacity: 1,
-                color: 'rgba(227,26,28,1.0)',
+                color: 'rgba(10,3,4,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -2524,7 +2532,7 @@
             return {
                 pane: 'pane_PuyChirouzan_38',
                 opacity: 1,
-                color: 'rgba(5,15,164,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -2610,7 +2618,70 @@
         });
         bounds_group.addLayer(layer_ChantermerlesauBriancon_39);
         map.addLayer(layer_ChantermerlesauBriancon_39);
-        function pop_BrianconauLaSalle_40(feature, layer) {
+        function pop_Chemin_Eti_40(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_Chemin_Eti_40_0() {
+            return {
+                pane: 'pane_Chemin_Eti_40',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Chemin_Eti_40');
+        map.getPane('pane_Chemin_Eti_40').style.zIndex = 440;
+        map.getPane('pane_Chemin_Eti_40').style['mix-blend-mode'] = 'normal';
+        var layer_Chemin_Eti_40 = new L.geoJson(json_Chemin_Eti_40, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Chemin_Eti_40',
+            layerName: 'layer_Chemin_Eti_40',
+            pane: 'pane_Chemin_Eti_40',
+            onEachFeature: pop_Chemin_Eti_40,
+            style: style_Chemin_Eti_40_0,
+        });
+        bounds_group.addLayer(layer_Chemin_Eti_40);
+        map.addLayer(layer_Chemin_Eti_40);
+        function pop_BrianconauLaSalle_41(feature, layer) {
             layer.on({
                 mouseout: function (e) {
                     for (i in e.target._eventParents) {
@@ -2646,9 +2717,9 @@
             layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
-        function style_BrianconauLaSalle_40_0() {
+        function style_BrianconauLaSalle_41_0() {
             return {
-                pane: 'pane_BrianconauLaSalle_40',
+                pane: 'pane_BrianconauLaSalle_41',
                 opacity: 1,
                 color: 'rgba(64,207,16,1.0)',
                 dashArray: '',
@@ -2659,21 +2730,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_BrianconauLaSalle_40');
-        map.getPane('pane_BrianconauLaSalle_40').style.zIndex = 440;
-        map.getPane('pane_BrianconauLaSalle_40').style['mix-blend-mode'] = 'normal';
-        var layer_BrianconauLaSalle_40 = new L.geoJson(json_BrianconauLaSalle_40, {
+        map.createPane('pane_BrianconauLaSalle_41');
+        map.getPane('pane_BrianconauLaSalle_41').style.zIndex = 441;
+        map.getPane('pane_BrianconauLaSalle_41').style['mix-blend-mode'] = 'normal';
+        var layer_BrianconauLaSalle_41 = new L.geoJson(json_BrianconauLaSalle_41, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_BrianconauLaSalle_40',
-            layerName: 'layer_BrianconauLaSalle_40',
-            pane: 'pane_BrianconauLaSalle_40',
-            onEachFeature: pop_BrianconauLaSalle_40,
-            style: style_BrianconauLaSalle_40_0,
+            dataVar: 'json_BrianconauLaSalle_41',
+            layerName: 'layer_BrianconauLaSalle_41',
+            pane: 'pane_BrianconauLaSalle_41',
+            onEachFeature: pop_BrianconauLaSalle_41,
+            style: style_BrianconauLaSalle_41_0,
         });
-        bounds_group.addLayer(layer_BrianconauLaSalle_40);
-        map.addLayer(layer_BrianconauLaSalle_40);
-        function pop_Infernet_41(feature, layer) {
+        bounds_group.addLayer(layer_BrianconauLaSalle_41);
+        map.addLayer(layer_BrianconauLaSalle_41);
+        function pop_Infernet_42(feature, layer) {
             layer.on({
                 mouseout: function (e) {
                     for (i in e.target._eventParents) {
@@ -2709,9 +2780,9 @@
             layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
-        function style_Infernet_41_0() {
+        function style_Infernet_42_0() {
             return {
-                pane: 'pane_Infernet_41',
+                pane: 'pane_Infernet_42',
                 opacity: 1,
                 color: 'rgba(5,15,164,1.0)',
                 dashArray: '',
@@ -2722,21 +2793,344 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Infernet_41');
-        map.getPane('pane_Infernet_41').style.zIndex = 441;
-        map.getPane('pane_Infernet_41').style['mix-blend-mode'] = 'normal';
-        var layer_Infernet_41 = new L.geoJson(json_Infernet_41, {
+        map.createPane('pane_Infernet_42');
+        map.getPane('pane_Infernet_42').style.zIndex = 442;
+        map.getPane('pane_Infernet_42').style['mix-blend-mode'] = 'normal';
+        var layer_Infernet_42 = new L.geoJson(json_Infernet_42, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Infernet_41',
-            layerName: 'layer_Infernet_41',
-            pane: 'pane_Infernet_41',
-            onEachFeature: pop_Infernet_41,
-            style: style_Infernet_41_0,
+            dataVar: 'json_Infernet_42',
+            layerName: 'layer_Infernet_42',
+            pane: 'pane_Infernet_42',
+            onEachFeature: pop_Infernet_42,
+            style: style_Infernet_42_0,
         });
-        bounds_group.addLayer(layer_Infernet_41);
-        map.addLayer(layer_Infernet_41);
+        bounds_group.addLayer(layer_Infernet_42);
+        map.addLayer(layer_Infernet_42);
+        function pop_LeMelezin2_43(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_LeMelezin2_43_0() {
+            return {
+                pane: 'pane_LeMelezin2_43',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LeMelezin2_43');
+        map.getPane('pane_LeMelezin2_43').style.zIndex = 443;
+        map.getPane('pane_LeMelezin2_43').style['mix-blend-mode'] = 'normal';
+        var layer_LeMelezin2_43 = new L.geoJson(json_LeMelezin2_43, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LeMelezin2_43',
+            layerName: 'layer_LeMelezin2_43',
+            pane: 'pane_LeMelezin2_43',
+            onEachFeature: pop_LeMelezin2_43,
+            style: style_LeMelezin2_43_0,
+        });
+        bounds_group.addLayer(layer_LeMelezin2_43);
+        map.addLayer(layer_LeMelezin2_43);
+        function pop_Melezene_44(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_Melezene_44_0() {
+            return {
+                pane: 'pane_Melezene_44',
+                opacity: 1,
+                color: 'rgba(5,15,164,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Melezene_44');
+        map.getPane('pane_Melezene_44').style.zIndex = 444;
+        map.getPane('pane_Melezene_44').style['mix-blend-mode'] = 'normal';
+        var layer_Melezene_44 = new L.geoJson(json_Melezene_44, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Melezene_44',
+            layerName: 'layer_Melezene_44',
+            pane: 'pane_Melezene_44',
+            onEachFeature: pop_Melezene_44,
+            style: style_Melezene_44_0,
+        });
+        bounds_group.addLayer(layer_Melezene_44);
+        map.addLayer(layer_Melezene_44);
+        function pop_Ratire_45(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_Ratire_45_0() {
+            return {
+                pane: 'pane_Ratire_45',
+                opacity: 1,
+                color: 'rgba(5,15,164,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Ratire_45');
+        map.getPane('pane_Ratire_45').style.zIndex = 445;
+        map.getPane('pane_Ratire_45').style['mix-blend-mode'] = 'normal';
+        var layer_Ratire_45 = new L.geoJson(json_Ratire_45, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Ratire_45',
+            layerName: 'layer_Ratire_45',
+            pane: 'pane_Ratire_45',
+            onEachFeature: pop_Ratire_45,
+            style: style_Ratire_45_0,
+        });
+        bounds_group.addLayer(layer_Ratire_45);
+        map.addLayer(layer_Ratire_45);
+        function pop_RectifierRed_46(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_RectifierRed_46_0() {
+            return {
+                pane: 'pane_RectifierRed_46',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_RectifierRed_46');
+        map.getPane('pane_RectifierRed_46').style.zIndex = 446;
+        map.getPane('pane_RectifierRed_46').style['mix-blend-mode'] = 'normal';
+        var layer_RectifierRed_46 = new L.geoJson(json_RectifierRed_46, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RectifierRed_46',
+            layerName: 'layer_RectifierRed_46',
+            pane: 'pane_RectifierRed_46',
+            onEachFeature: pop_RectifierRed_46,
+            style: style_RectifierRed_46_0,
+        });
+        bounds_group.addLayer(layer_RectifierRed_46);
+        map.addLayer(layer_RectifierRed_46);
+        function pop_RectifierBlack_47(feature, layer) {
+            layer.on({
+                mouseout: function (e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function (feature) {
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
+
+        function style_RectifierBlack_47_0() {
+            return {
+                pane: 'pane_RectifierBlack_47',
+                opacity: 1,
+                color: 'rgba(10,3,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_RectifierBlack_47');
+        map.getPane('pane_RectifierBlack_47').style.zIndex = 447;
+        map.getPane('pane_RectifierBlack_47').style['mix-blend-mode'] = 'normal';
+        var layer_RectifierBlack_47 = new L.geoJson(json_RectifierBlack_47, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RectifierBlack_47',
+            layerName: 'layer_RectifierBlack_47',
+            pane: 'pane_RectifierBlack_47',
+            onEachFeature: pop_RectifierBlack_47,
+            style: style_RectifierBlack_47_0,
+        });
+        bounds_group.addLayer(layer_RectifierBlack_47);
+        map.addLayer(layer_RectifierBlack_47);
         setBounds();
+        map.addControl(new L.Control.Search({
+            layer: layer_BoisdAvalRoute2_2,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'Niveau'
+        }));
+        document.getElementsByClassName('search-button')[0].className +=
+            ' fa fa-binoculars';
 
         //base layer and over layer added
         var baseLayers = {
@@ -2748,9 +3142,12 @@
             "51 Lacets": layer_51_lacets_37,
             "Bois Aval Route 2": layer_BoisdAvalRoute2_2,
             "Bois Aval": layer_BoisdAval_3,
-            "Briancon au La Salle Les Alpes": layer_BrianconauLaSalle_40,
+            "Briancon au La Salle Les Alpes": layer_BrianconauLaSalle_41,
             "Canal d'Eglise": layer_Canaldelglise_7,
             "Chantermerles au Briancon": layer_ChantermerlesauBriancon_39,
+            "Chemin Eti": layer_Chemin_Eti_40,
+            "Chemin de Roy": layer_ChemindeRoy_8,
+            "Chemin de Roy": layer_CheminduRoy_9,
             "Clarée Rivére": layer_ClareeRiver_25,
             "Col du Granon": layer_ColduGranon_11,
             "Col du Lautaret": layer_ColduLautaret_12,
@@ -2758,12 +3155,14 @@
             "Fort de L'Infernet": layer_FortdelInfernet_15,
             "Fort Christiane-Parc de la Schappe": layer_FontChristianeParcdelaSchappe_14,
             "Fort de Sallette-Vachette": layer_FortdeSalletteVachette_16,
-            "Infernet": layer_Infernet_41,
+            "Infernet": layer_Infernet_42,
             "La Cime des Conchiers": layer_LaCimedesConchiers_18,
             "Le Balcon": layer_LeBalcon_19,
             "Le Cucumelle Tour par les 3 Cols": layer_LeCucumelleTourparles3cols_36,
             "Le Grand Bois des Bains": layer_LeGrandBoisdesBains_20,
             "Le Melezin": layer_LeMelezin_21,
+            "Le Melezin2": layer_LeMelezin2_43,
+            "Melezene": layer_Melezene_44,
             "Le Puy de Cros descente par le Puy Jauma": layer_LePuydeCrosdescenteparlePuyJauma_22,
             "Le Puy de la Salle": layer_LePuydelaSalle_23,
             "Le Tour de la basse Clarée": layer_LeTourdelabasseClare_24,
@@ -2777,13 +3176,15 @@
             "Puy Chirouzan": layer_PuyChirouzan_38,
             "Puy Freyssinet-Freyssinet": layer_PuyFreyssinetFreyssinet_32,
             "Puy Freyssinet Serre Barbin": layer_PuyFreyssinetSerreBarbin_33,
+            "Rectifier": layer_RectifierRed_46,
+            "Rectifier": layer_RectifierBlack_47,
             "Torrent de Sachas": layer_TorrentdeSachas_35,
             "Torrent de Sachas Route 2": layer_TorrentdeSachasRoute2_34,
 
         };
 
         L.control.layers(baseLayers, overlays).addTo(map);
-        //base layer and overlayer finished
+        //base layer and overlayer finishe
     </script>
     <footer>
         <a href="index.html"></span>Accueil</a>
