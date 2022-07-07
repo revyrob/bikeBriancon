@@ -11,8 +11,17 @@
     <link rel="stylesheet" href="css/L.Control.Locate.min.css">
     <link rel="stylesheet" href="css/qgis2web.css">
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/leaflet-search.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L82FRLVPPY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L82FRLVPPY');
+    </script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -27,6 +36,9 @@
             margin-top: 25px;
         }
     </style>
+    <meta name="description" content="Carte de VTT Serre Chevalier" />
+    <meta name="keywords" content="map Enduro biking, map cross country biking, carte Enduro, carte VTT,
+         bike Briançon, VTT Briançon, bike Serre Chevalier, VTT Serre Chevalier" />
     <title>Bike Briançon VTT Carte</title>
 </head>
 
@@ -39,7 +51,7 @@
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class='navbar-nav'>
                 <li class="nav-item">
-                    <a href="map.html" class="nav-link">Carte VTT</a>
+                    <a href="carteVTT.html" class="nav-link">Carte VTT</a>
                 </li>
             </ul>
             <ul class='navbar-nav'>
@@ -61,7 +73,6 @@
     <script src="js/rbush.min.js"></script>
     <script src="js/labelgun.min.js"></script>
     <script src="js/labels.js"></script>
-    <script src="js/leaflet-search.js"></script>
     <script src="data/BoisdAvalRoute2_2.js"></script>
     <script src="data/BoisdAval_3.js"></script>
     <script src="data/BoisdeSaintJoseph_4.js"></script>
@@ -100,7 +111,7 @@
     <script src="data/51_lacets_37.js"></script>
     <script src="data/PuyChirouzan_38.js"></script>
     <script src="data/ChantermerlesauBriancon_39.js"></script>
-    <script src="data/Chemin_Eti_40.js"></script>
+    <script src="data/PuydelaSalle_40.js"></script>
     <script src="data/BrianconauLaSalle_41.js"></script>
     <script src="data/Infernet_42.js"></script>
     <script src="data/LeMelezin2_43.js"></script>
@@ -198,6 +209,7 @@
 
         map.on('locationerror', onLocationError);
         // end of geolocator with marker
+
         map.createPane('pane_OpenStreetMap_0');
         map.getPane('pane_OpenStreetMap_0').style.zIndex = 400;
         var layer_OpenStreetMap_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -2618,7 +2630,7 @@
         });
         bounds_group.addLayer(layer_ChantermerlesauBriancon_39);
         map.addLayer(layer_ChantermerlesauBriancon_39);
-        function pop_Chemin_Eti_40(feature, layer) {
+        function pop_PuydelaSalle_40(feature, layer) {
             layer.on({
                 mouseout: function (e) {
                     for (i in e.target._eventParents) {
@@ -2636,27 +2648,27 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
-        function style_Chemin_Eti_40_0() {
+        function style_PuydelaSalle_40_0() {
             return {
-                pane: 'pane_Chemin_Eti_40',
+                pane: 'pane_PuydelaSalle_40',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -2667,20 +2679,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Chemin_Eti_40');
-        map.getPane('pane_Chemin_Eti_40').style.zIndex = 440;
-        map.getPane('pane_Chemin_Eti_40').style['mix-blend-mode'] = 'normal';
-        var layer_Chemin_Eti_40 = new L.geoJson(json_Chemin_Eti_40, {
+        map.createPane('pane_PuydelaSalle_40');
+        map.getPane('pane_PuydelaSalle_40').style.zIndex = 440;
+        map.getPane('pane_PuydelaSalle_40').style['mix-blend-mode'] = 'normal';
+        var layer_PuydelaSalle_40 = new L.geoJson(json_PuydelaSalle_40, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Chemin_Eti_40',
-            layerName: 'layer_Chemin_Eti_40',
-            pane: 'pane_Chemin_Eti_40',
-            onEachFeature: pop_Chemin_Eti_40,
-            style: style_Chemin_Eti_40_0,
+            dataVar: 'json_PuydelaSalle_40',
+            layerName: 'layer_PuydelaSalle_40',
+            pane: 'pane_PuydelaSalle_40',
+            onEachFeature: pop_PuydelaSalle_40,
+            style: style_PuydelaSalle_40_0,
         });
-        bounds_group.addLayer(layer_Chemin_Eti_40);
-        map.addLayer(layer_Chemin_Eti_40);
+        bounds_group.addLayer(layer_PuydelaSalle_40);
+        map.addLayer(layer_PuydelaSalle_40);
         function pop_BrianconauLaSalle_41(feature, layer) {
             layer.on({
                 mouseout: function (e) {
@@ -2825,19 +2837,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
@@ -2888,19 +2900,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
@@ -2951,19 +2963,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
@@ -3014,19 +3026,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
@@ -3077,19 +3089,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Niveau</strong><br />' + (feature.properties['Niveau'] !== null ? autolinker.link(feature.properties['Niveau'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Longueur</strong><br />' + (feature.properties['Longueur'] !== null ? autolinker.link(feature.properties['Longueur'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Alt Max</strong><br />' + (feature.properties['Alt Max'] !== null ? autolinker.link(feature.properties['Alt Max'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Source</strong><br />' + (feature.properties['Source'] !== null ? autolinker.link(feature.properties['Source'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, { maxHeight: 400 });
@@ -3123,14 +3135,6 @@
         bounds_group.addLayer(layer_RectifierBlack_47);
         map.addLayer(layer_RectifierBlack_47);
         setBounds();
-        map.addControl(new L.Control.Search({
-            layer: layer_BoisdAvalRoute2_2,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'Niveau'
-        }));
-        document.getElementsByClassName('search-button')[0].className +=
-            ' fa fa-binoculars';
 
         //base layer and over layer added
         var baseLayers = {
@@ -3145,9 +3149,6 @@
             "Briancon au La Salle Les Alpes": layer_BrianconauLaSalle_41,
             "Canal d'Eglise": layer_Canaldelglise_7,
             "Chantermerles au Briancon": layer_ChantermerlesauBriancon_39,
-            "Chemin Eti": layer_Chemin_Eti_40,
-            "Chemin de Roy": layer_ChemindeRoy_8,
-            "Chemin de Roy": layer_CheminduRoy_9,
             "Clarée Rivére": layer_ClareeRiver_25,
             "Col du Granon": layer_ColduGranon_11,
             "Col du Lautaret": layer_ColduLautaret_12,
@@ -3161,8 +3162,7 @@
             "Le Cucumelle Tour par les 3 Cols": layer_LeCucumelleTourparles3cols_36,
             "Le Grand Bois des Bains": layer_LeGrandBoisdesBains_20,
             "Le Melezin": layer_LeMelezin_21,
-            "Le Melezin2": layer_LeMelezin2_43,
-            "Melezene": layer_Melezene_44,
+            "Le Melezin 2": layer_LeMelezin2_43,
             "Le Puy de Cros descente par le Puy Jauma": layer_LePuydeCrosdescenteparlePuyJauma_22,
             "Le Puy de la Salle": layer_LePuydelaSalle_23,
             "Le Tour de la basse Clarée": layer_LeTourdelabasseClare_24,
@@ -3172,24 +3172,26 @@
             "Les Tures de la Salle": layer_LesTuresdelaSalle_30,
             "Le Vallée de Clarée": layer_LeValleedeClaree_26,
             "L'Oule": layer_LOule_17,
+            "Melezene": layer_Melezene_44,
             "Peyra Juana": layer_PeyraJuana_31,
             "Puy Chirouzan": layer_PuyChirouzan_38,
             "Puy Freyssinet-Freyssinet": layer_PuyFreyssinetFreyssinet_32,
             "Puy Freyssinet Serre Barbin": layer_PuyFreyssinetSerreBarbin_33,
-            "Rectifier": layer_RectifierRed_46,
-            "Rectifier": layer_RectifierBlack_47,
+            "Ratire": layer_Ratire_45,
+            "Recitifer Black": layer_RectifierBlack_47,
+            "Recitifer Red": layer_RectifierRed_46,
             "Torrent de Sachas": layer_TorrentdeSachas_35,
             "Torrent de Sachas Route 2": layer_TorrentdeSachasRoute2_34,
 
         };
 
         L.control.layers(baseLayers, overlays).addTo(map);
-        //base layer and overlayer finishe
+        //base layer and overlayer finished
     </script>
     <footer>
         <a href="index.html"></span>Accueil</a>
-        <a href="map2.html"></span> Carte VTT</a>
-        <a href="https://revyrob.github.io/kaylerobson/" target="_blank"></span> à Propos</a>
+        <a href="carteVTT.html"></span> Carte VTT</a>
+        <a href="https://kaylerobson.com" target="_blank"></span> à Propos</a>
         <a href="index.html#guide"></span> Guides Local</a>
         <a href=""></span>Copyright 2020 by Kayle Robson</a>
     </footer>

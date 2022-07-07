@@ -1,0 +1,19 @@
+
+RewriteEngine on
+
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+RewriteCond %{HTTP_HOST} ^www\.bikebriancon\.fr$
+RewriteRule ^/?$ "http\:\/\/bikebriancon\.fr\/" [R=301,L]
+
+#Always use https for secure connection
+#Replace 'www.bikebriancon.fr' with your domain name
+#(as it appears on your SSL certificate)
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://bikebriancon.fr/$1 [R=301,L]
