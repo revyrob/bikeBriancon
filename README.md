@@ -1,4 +1,5 @@
 <h1>Bike Briancon</h1>
+## Version 2
 <p>A web application that shows bike trails around Briancon, France</p>
 <ul>
 Used:
