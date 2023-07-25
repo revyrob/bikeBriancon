@@ -9,7 +9,7 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
 RewriteCond %{HTTP_HOST} ^www\.bikebriancon\.fr$
-RewriteRule ^/?$ "http\:\/\/bikebriancon\.fr\/" [R=301,L]
+RewriteRule ^/?$ "https\:\/\/bikebriancon\.fr\/" [R=301,L]
 
 #Always use https for secure connection
 #Replace 'www.bikebriancon.fr' with your domain name
