@@ -11,7 +11,7 @@ Used:
 <li>Responsive</li>
 
 
-<p>Link = <a href="https://bikebriancon.fr">Bike Briancon</a></p>
+<p>Link = <a href="https://revyrob.github.io/bikeBriancon/">Bike Briancon</a></p>
 
 
 ![image](https://user-images.githubusercontent.com/66695865/188358607-e9494e3d-1bfe-45a3-b454-ff1aad17ad78.png)
